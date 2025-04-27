@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+ 
+<!--<form action="welcome.jsp">
+First Name : <input type="text" name="uname">
+Last Name : <input type="text" name="lname">
+<input type="submit" value="go"><br/>
+</form> -->
+ 
+<!--   <form action = "welcome.jsp" method = "POST" enctype="multipart/form-data"> -->
+  <!-- <form action = "welcome.jsp" method = "POST" >
+         First Name: <input type = "text" name = "first_name">
+         <br />
+         Last Name: <input type = "text" name = "last_name" /><br>
+		 
+        Select File : 
+        <input type="file" name="file1">
+        <br>
+         <input type = "submit" value = "Submit" />
+      </form> -->
+ 
+ 
+ <!--<FORM action="http://localhost:8085/examples/jwellery/register_product.jsp" METHOD="POST" enctype="multipart/form-data" name="register_mail"> -->
+<!--<FORM action="register_product.jsp" METHOD="POST" enctype="multipart/form-data" name="register_mail"> -->
+   <form action = "welcome.jsp" method = "POST" >
+<!--TOP BAR BEGINS-->
+	<table cellspacing=0 cellpadding=0 border=0 width=731 height=45 align=center>
+		<tr height=45 valign=bottom>
+			<td width=16></td>
+			
+			<td align=right valign=bottom width=465 class=f13><div align="center"><span class="style1">New Product</span><br>
+			  </div>
+			  <table cellspacing=0 cellpadding=0 border=0 height=10>
+					<tr>
+						<td height=10></td>
+					</tr>
+		  </table>		  </td>
+		</tr>
+	</table>
+<!--TOP BAR ENDS-->
+<table cellspacing=0 cellpadding=0 border=0 width=731 height=54 align=center class=main_form>
+  <tr>
+    <td colspan=7></td>
+  </tr>
+  <tr>
+    <td width=77></td>
+    <td colspan=6 class=f13><font color="#FF00FF">Fields marked with <font face="Verdana" size =-2 color="#E30102">(*)</font> are compulsory. This informati<font color="#FF00FF"></font>on is a must 
+      for successful account creation.</font></td>
+  </tr>
+  <tr>
+    <td height=17></td>
+  </tr>
+ 
+  <tr>
+    <td width=77></td>
+    <td width=17 class=f13 valign=middle><font face="Verdana" size =-2 color="#E30102">*</font></td>
+    <td width=160 class=f13><font color="Black">Product Name</font></td>
+    <td width=14 class=f13><b>:</b></td>
+    <td width=185><textarea name="Prod_name" cols="20" rows="3" id="Prod_name"></textarea></td>
+    <td width=6></td>
+    <td width=272>&nbsp;</td>
+  </tr>
+  <tr>
+    <td></td>
+    <td colspan=6  height=8  align="left" valign="middle"><div class=divcss id="check_availability" valign="middle" style='display:none;position:relative; visibility: hidden;'></div></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td><font face="Verdana" size =-2 color="#E30102">*</font></td>
+    <td class=f13><font color="black">Category Name</font></td>
+    <td class=f13><b>:</b></td>
+    <td colspan=3><select name="category" style="width:183px;" onChange="showHidecity()">
+      <option label="Select" value="">Select</option>
+      <option label="bracelet" value="bracelet">bracelet</option>
+      <option label="Rings " value="Rings">Rings </option>
+      <option label="Earrings" value="Earrings">Earrings</option>
+      <option label="Pendant" value="Pendant">Pendant</option>
+      <option label="Mangalsutra" value="Mangalsutra">Mangalsutra</option>
+      <option label="Other Accessories" value="Other Accessories">Other Accessories</option>
+    
+    </select></td>
+  </tr>
+ 
+ <!-- <tr>
+    <td height=5></td>
+  </tr> -->
+ 
+  <tr>
+    <td height=8></td>
+  </tr>
+  
+  
+  <!--<tr>
+    <td height=8></td>
+  </tr> -->
+  <!--<tr>
+    <td colspan=7><div id="div_altemail" style="visibility:visible;display:block;">
+      <table cellspacing=0 cellpadding=0 border=0>
+        <tr>
+          <td width=77></td>
+          <td width=17><font face="Verdana" size =-2 color="#E30102">*</font></td>
+          <td width=148 class=f13><font color="black">Image</font></td>
+          <td width=14 class=f13><b>:</b></td>
+          <td width=185><input type="file"  name="imageFile"></td>
+          <td width=6></td>
+          <td width=272><font class=f10 color="#E30102"><br>
+          </font></td>
+        </tr>
+        <tr>
+          <td height=6></td>
+        </tr>
+      </table>
+    </div></td>
+  </tr> -->
+  <tr>
+    <td width=77></td>
+    <td width=17 class=f13 valign=middle><font face="Verdana" size =-2 color="#E30102">*</font></td>
+    <td width=160 class=f13><font color="Black">Discription Value </font></td>
+    <td width=14 class=f13><b>:</b></td>
+    <td width=185><!--<input type="text" name="descr" value="7" style="width:185px;" maxlength="61" id="descr"> --><input name="d1" type="text" size="15"></td>
+    <td width=6></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td colspan=6  height=8  align="left" valign="middle"><div class=divcss id="check_availability" valign="middle" style='display:none;position:relative; visibility: hidden;'></div></td>
+  </tr>
+  <tr>
+    <td width=77></td>
+    <td width=17 class=f13 valign=middle><font face="Verdana" size =-2 color="#E30102">*</font></td>
+    <td width=160 class=f13><font color="black">Price.</font></td>
+    <td width=14 class=f13><b>:</b></td>
+    <td width=185><input name="price" type="text" id="price" style="width:185px;" value="" maxlength="61"></td>
+    <td width=6></td>
+    <td width=272>&nbsp;</td>
+  </tr>
+  <tr>
+    <td colspan=4></td>
+    <td colspan=3><table cellspacing=0 cellpadding=0 border=0>
+      <tr>
+        <td></td>
+        <td><div id="altid_msg"><font class=f13>&nbsp;</font></div></td>
+      </tr>
+    </table></td>
+  </tr>
+  <tr>
+    <td colspan=7><div id="div_hintQS" style="visibility:hidden;display:none;">
+      <table cellspacing=0 cellpadding=0 border=0>
+        <tr>
+          <td height=6></td>
+        </tr>
+      
+    
+        <tr>
+          <td height=8></td>
+        </tr>
+        
+             
+        <tr>
+          <td height=8></td>
+        </tr>
+        
+        <tr>
+          <td height="8"></td>
+        </tr>
+        <tr>
+          <td colspan="4"></td>
+          <td colspan="3"><div id='div_othcity' style='visibility:hidden; display:none;'>
+            <input type="text" name="othercity" value="" style="width:180" onClick="if(this.value == 'Enter your city here' ) this.value='';" onBlur="if(this.value=='') this.value='Enter your city here';">
+            <br>
+            <br>
+          </div></td>
+        </tr>
+      </table>
+    </div></td>
+  </tr>
+  
+  <tr>
+    <td colspan=4></td>
+    <td colspan=3><input type='hidden' name='FormName' value=''>
+        <input type='hidden' name='service' value=''>
+        <input type="Submit" name="Input" value=" Submit " onClick="return CheckForm()">
+      &nbsp;&nbsp;<font class=f10 color="#868686">
+        <input type="reset" name="Cancel" value="Cancel">
+      </font></td>
+  </tr>
+  <tr>
+    <td height=15></td>
+  </tr>
+</table>
+<!--TRUSTe logo table begins-->
+<table cellspacing=0 cellpadding=0 border=0 align=center width=100%>
+			<tr><td height="10"></td></tr>
+			<tr><td align="center" valign="top"></td></tr>
+	  </table>
+<!--TRUSTe logo table ends-->
+
+<!--Footer begins-->
+		<table cellspacing=0 cellpadding=0 border=0 align=center width=731>
+			<tr>
+				<td class=f13 align=center height=52><!--<SCRIPT LANGUAGE="JavaScript" src="http://im.rediff.com/uim/footer/rediffmail_footer.htm"></SCRIPT> --></td>
+			</tr>
+		</table>
+<!--Footer ends-->
+
+</FORM>
+
+ 
+ 
+ 
+</body>
+</html>
