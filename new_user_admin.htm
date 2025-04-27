@@ -1,0 +1,730 @@
+<HTML>
+<HEAD>
+<META Http-Equiv="Cache-Control" Content="no-cache" /> 
+<META Http-Equiv="Pragma" Content="no-cache" /> 
+<META Http-Equiv="Expires" Content="0" /> 
+<META NAME=DESCRIPTION CONTENT="Rediffmail Free Unlimited Storage, Store photos, videos, music in Rediffmail.">
+<META NAME=KEYWORDS CONTENT="Rediffmail Free Unlimited Storage, Store photos, Store videos, Store music">
+<TITLE>New User</TITLE>
+   <link href="style.css" rel="stylesheet" type="text/css" />
+	<script LANGUAGE=JavaScript TYPE=text/javascript src="http://jdelivery.rediff.com/register/include/js/rediffmail.js"></script>
+
+
+<SCRIPT>
+
+<!-- This script and many more are available free online at -->
+<!-- The JavaScript Source!! http://javascript.internet.com -->
+
+<!-- Begin
+function validate(field) {
+//var valid = "abcdefghijklmnopqrstuvwxyz0123456789"
+var valid = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ ";
+var ok = "yes";
+var temp;
+for (var i=0; i<field.value.length; i++) {
+temp = "" + field.value.substring(i, i+1);
+if (valid.indexOf(temp) == "-1") ok = "no";
+}
+if (ok == "no") {
+//alert("Invalid entry!  Only characters are accepted!");
+//field.focus();
+//field.select();
+return false;
+   }
+}
+//  End -->
+
+
+function isInteger(s)
+{   var i;
+    for (i = 0; i < s.length; i++)
+    {   
+        // Check that current character is number.
+        var c = s.charAt(i);
+        if (((c < "0") || (c > "9"))) return false;
+    }
+    // All characters are numbers.
+    return true;
+}
+
+function isChar(s)
+{   var i;
+    for (i = 0; i < s.length; i++)
+    {   
+        // Check that current character is number.
+        var c = s.charAt(i);
+        if (((c < "A") || (c > "Z")))return false;
+    }
+	
+    // All characters are numbers.
+    return true;
+}
+
+function trim(s)
+{   var i;
+    var returnString = "";
+    // Search through string's characters one by one.
+    // If character is not a whitespace, append to returnString.
+    for (i = 0; i < s.length; i++)
+    {   
+        // Check that current character isn't whitespace.
+        var c = s.charAt(i);
+        if (c != " ") returnString += c;
+    }
+    return returnString;
+}
+
+
+
+
+function CheckForm () {
+
+	var form=document.register_mail;
+	//var enrollno=document.register_mail.ENROLLMENT_N0
+	//var studname=document.register_mail.STUDENT_NAME
+	var name=document.register_mail.name
+	var pincode=document.register_mail.pincode
+	var pancardno=document.register_mail.pan_card_no
+	var phoneno=document.register_mail.phone_no
+	var dobday=document.register_mail.DOB_Day
+	var dobyear=document.register_mail.DOB_Year
+
+
+
+
+	/*	if (document.register_mail.HT_rep_email.value != document.register_mail.HT_email.value) {
+	                alert ('Your E-Mail addresses do not match. Please re-enter.');
+			return false;
+		}*/
+
+                if(document.register_mail.name.value =="") {
+                      alert (' Name not entered. Please enter.');
+			return false;
+                }
+
+                if(document.register_mail.address.value ==""){
+                   alert ('Address not entered. Please enter.');
+			return false;
+                }
+
+                if(document.register_mail.pincode.value ==""){
+                   alert ('Pincode not entered. Please enter.');
+			return false;
+                }
+
+                if(document.register_mail.userid.value ==""){
+                   alert ('User Id not entered. Please enter.');
+			return false;
+                }
+               if(document.register_mail.passwd.value ==""){
+                   alert ('Password not entered. Please enter.');
+			return false;
+                }
+
+		if(document.register_mail.confirm_passwd.value ==""){
+                   alert ('Confirm Password not entered. Please enter.');
+			return false;
+                }
+
+		if (document.register_mail.passwd.value != document.register_mail.confirm_passwd.value) {
+	                alert ('Your Password and Confirm Password do not match. Please re-enter.');
+			return false;
+		}
+
+
+		if(document.register_mail.pan_card_no.value ==""){
+                   alert ('PAN Card No not entered. Please enter.');
+			return false;
+                }
+
+
+		if(document.register_mail.phone_no.value ==""){
+                   alert ('Phone No not entered. Please enter.');
+			return false;
+                }
+
+
+		if(document.register_mail.emailid.value ==""){
+                   alert ('Email Id not entered. Please enter.');
+			return false;
+                }
+
+
+		if(document.register_mail.DOB_Day.value ==""){
+                   alert ('DOB Day not entered. Please enter.');
+			return false;
+                }
+
+		if(document.register_mail.DOB_Year.value ==""){
+                   alert ('DOB Year not entered. Please enter.');
+			return false;
+                }
+
+	if (validate(name)==false){
+		alert("Please Enter a Valid Value for Name")
+		name.value=""
+		name.focus()
+		return false
+	}	
+
+
+
+
+
+
+	if (isInteger(pincode.value)==false){
+		alert("Please Enter a Valid Value for Pincode")
+		pincode.value=""
+		pincode.focus()
+		return false
+	}	
+
+	if (isInteger(pancardno.value)==false){
+		alert("Please Enter a Valid Value for Billing PAN Card No.")
+		pancardno.value=""
+		pancardno.focus()
+		return false
+	}	
+
+/*	if (validate(phoneno)==false){
+		alert("Please Enter a Valid Value for Billing Pin")
+		billpin.value=""
+		billpin.focus()
+		return false
+	}	*/
+
+	if (isInteger(dobday.value)==false){
+		alert("Please Enter a Valid Value for DOB Day")
+		dobday.value=""
+		dobday.focus()
+		return false
+	}	
+	if (isInteger(dobyear.value)==false){
+		alert("Please Enter a Valid Value for DOB Year")
+		dobyear.value=""
+		dobyear.focus()
+		return false
+	}	
+
+/*	if (validate(billpin)==false){
+		alert("Please Enter a Valid Value for Billing Pin")
+		billpin.value=""
+		billpin.focus()
+		return false
+	}	*/
+
+
+
+
+
+
+/*if (document.form3.HT_rep_email.value  != "@") {
+	                alert ('Please Enter proper value for Email ');
+			return false;
+		}
+
+if (document.form3.HT_email.value  != "@") {
+	                alert ('Please Enter proper value for Email');
+			return false;
+		}*/
+
+
+		
+
+
+             document.register_mail.submit();
+
+
+}
+</script>
+
+
+
+
+    <style type="text/css">
+<!--
+.style1 {
+	font-size: 24px;
+	font-weight: bold;
+	color: #0000FF;
+}
+-->
+    </style>
+</HEAD><body  BGCOLOR="#663300" text="#FFCC99" link="#FFFFFF" alink="#FF3300" vlink="#FFFFFF" leftmargin="0" topmargin="0" marginheight="0" marginwidth="0">
+  <div id="wrapper">
+      <div id="inner">
+          <div id="header">
+              <h1><img src="images/logo.gif" width="519" height="63" alt="Online Movie Store" /></h1>
+              
+      <div id="nav"><!--<a href="adminlogin.jsp">Admin</a> |--> <a href="adminlogin.jsp?ainvalid=1">Logout</a> <!--| 
+        <a href="http://www.freewebsitetemplates.com">view cart</a> | <a href="aboutus.html">about 
+        us </a> --></div>
+      <!-- end nav -->
+              <a href="http://www.freewebsitetemplates.com"><img src="images/header_1.gif" width="775" height="145" alt="Harry Potter cd" /></a>
+              <a href="http://www.freewebsitetemplates.com"><img src="images/header_2.gif" width="775" height="48" alt="" /></a>
+          </div><!-- end header -->
+
+
+<FORM action="http://localhost:8095/examples/onlineshop/register_admin.jsp" METHOD="POST" name="register_mail">
+
+<!--TOP BAR BEGINS-->
+	<table cellspacing=0 cellpadding=0 border=0 width=731 height=45 align=center>
+		<tr height=45 valign=bottom>
+			<td width=16></td>
+			
+			<td align=right valign=bottom width=465 class=f13><span class="style1">Registration Form</span><br>
+				<table cellspacing=0 cellpadding=0 border=0 height=10>
+					<tr>
+						<td height=10></td>
+					</tr>
+				</table>		  </td>
+		</tr>
+	</table>
+<!--TOP BAR ENDS-->
+
+	<table cellspacing=0 cellpadding=0 border=0 width=731 height=54 align=center class=main_form>
+		<tr>
+		<td colspan=7>		</td>
+		</tr>
+		<tr>
+			<td width=77></td>
+			
+      <td colspan=6 class=f13><FONT COLOR="#FF00FF">Fields marked with <FONT FACE="Verdana" SIZE =-2 COLOR="#E30102">(*)</FONT> 
+        are compulsory. This informati<font color="#FF00FF"></font>on is a must 
+        for successful account creation.</FONT></td>
+		</tr>
+				<tr>
+			<td height=17></td>
+		</tr>
+		<tr>
+			<td width=77></td>
+			<td width=17 class=f13 valign=middle><FONT FACE="Verdana" SIZE =-2 COLOR="#E30102">*</FONT></td>
+			<td width=160 class=f13><font color="Black">Name</font></td>
+			<td width=14 class=f13><B>:</B></td>
+			<td width=185><INPUT TYPE="text" NAME="name" value="" style="width:185px;" maxlength="61"></td>
+			<td width=6></td>
+			<td width=272><FONT CLASS=f10 COLOR="#868686">e.g. Sameer Bhagwat</FONT></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td colspan=6  height=8  align="left" valign="middle"><div class=divcss id="check_availability" valign="middle" style='display:none;position:relative; visibility: hidden;'></div></td>
+		</tr>
+		
+		
+		<tr>
+			<td width=77></td>
+			<td width=17 class=f13 valign=middle><FONT FACE="Verdana" SIZE =-2 COLOR="#E30102">*</FONT></td>
+			<td width=160 class=f13><font color="Black">Address</font></td>
+			<td width=14 class=f13><B>:</B></td>
+			<td width=185><textarea name="address" cols="20" rows="3" id="address"></textarea></td>
+			<td width=6></td>
+			<td width=272>&nbsp;</td>
+		</tr>
+		
+		<tr>
+			<td></td>
+			<td colspan=6  height=8  align="left" valign="middle"><div class=divcss id="check_availability" valign="middle" style='display:none;position:relative; visibility: hidden;'></div></td>
+		</tr>
+		
+				<tr>
+			<td width=77></td>
+			<td width=17 class=f13 valign=middle><FONT FACE="Verdana" SIZE =-2 COLOR="#E30102">*</FONT></td>
+			
+      <td width=160 class=f13><font color="black">Pin Code </font></td>
+			<td width=14 class=f13><B>:</B></td>
+			<td width=185><INPUT NAME="pincode" TYPE="text" id="pincode" style="width:185px;" value="" maxlength="61"></td>
+			<td width=6></td>
+			<td width=272>&nbsp;</td>
+		</tr> 
+		
+		<tr><td height=5></td></tr>
+		<tr>
+			<td></td>
+			<td valign=middle><FONT FACE="Verdana" SIZE =-2 COLOR="#E30102">*</FONT></td>
+			<td class=f13><font color="black">Choose your USER ID</font></td>
+			<td class=f13><B>:</B></td>
+			<td><INPUT NAME="userid" TYPE="text" id="userid"  style="width:185px;" onclick='javascript:UncheckAllOptions();' value="" maxlength="30"></td>
+			<td></td>
+		  <td>&nbsp;</td>
+		</tr>
+			
+		<tr>
+			<td height=8 colspan=7 align="center"><span id="recommend_text" valign="center"></span></td></tr>
+		<tr>
+			<td></td>
+			<td><FONT FACE="Verdana" SIZE =-2 COLOR="#E30102">*</FONT></td>
+			<td class=f13><font color="black">Choose Password</font></td>
+			<td class=f13><B>:</B></td>
+			<td><INPUT TYPE="password" NAME="passwd" value="" style="width:185px;" maxlength="12"></td>
+			<td></td>
+			<td>
+				<table cellspacing=0 cellpadding=0 border=0>
+					<tr>
+						<td width=8><IMG SRC="http://jdelivery.rediff.com/register/pix/protected.gif" WIDTH="8" HEIGHT="10" BORDER="0" Title="" vspace=5></td>
+						<td valign=top>&nbsp;<FONT CLASS=f10 COLOR="#868686">Minimum 6 characters</FONT></td>
+					</tr>
+				</table>			</td>
+		</tr>
+		<tr>
+			<td height=8></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td width=17><FONT FACE="Verdana" SIZE =-2 COLOR="#E30102">*</FONT></td>
+			<td class=f13><font color="black">Confirm your Password</font></td>
+			<td class=f13><B>:</B></td>
+			<td><INPUT TYPE="password" NAME="confirm_passwd" value="" style="width:185px;" maxlength="12"></td>
+		</tr>
+		<tr>
+			<td height=8></td>
+		</tr>
+        
+		<!--tr>
+			<td width=77></td>
+			<td width=17 class=f13 valign=middle><FONT FACE="Verdana" SIZE =-2 COLOR="#E30102">*</FONT></td>
+			<td width=160 class=f13><font color="black">Account No.</font></td>
+			<td width=14 class=f13><B>:</B></td>
+			<td width=185><INPUT NAME="acct_no" TYPE="text" id="acct_no" style="width:185px;" value="" maxlength="61"></td>
+			<td width=6></td>
+			<td width=272>&nbsp;</td>
+		</tr>   
+		   
+		<tr>
+			<td height=8></td>
+		</tr>
+
+
+		<tr>
+			<td width=77></td>
+			<td width=17 class=f13 valign=middle><FONT FACE="Verdana" SIZE =-2 COLOR="#E30102">*</FONT></td>
+			<td width=160 class=f13><font color="black">Opening Balance</font></td>
+			<td width=14 class=f13><B>:</B></td>
+			<td width=185><INPUT NAME="op_bal" TYPE="text" id="op_bal" style="width:185px;" value="" maxlength="61"></td>
+			<td width=6></td>
+			<td width=272>&nbsp;</td>
+		</tr>   
+		   
+		<tr>
+			<td height=8></td>
+		</tr-->
+
+        <tr>
+			<td width=77></td>
+			<td width=17 class=f13 valign=middle><FONT FACE="Verdana" SIZE =-2 COLOR="#E30102">*</FONT></td>
+			<td width=160 class=f13><font color="black">PAN Card No.</font></td>
+			<td width=14 class=f13><B>:</B></td>
+			<td width=185><INPUT NAME="pan_card_no" TYPE="text" id="pan_card_no" style="width:185px;" value="" maxlength="61"></td>
+			<td width=6></td>
+			<td width=272>&nbsp;</td>
+		</tr>
+
+		<tr>
+			<td height=8></td>
+		</tr>
+
+
+		<tr>
+			<td width=77></td>
+			<td width=17 class=f13 valign=middle><FONT FACE="Verdana" SIZE =-2 COLOR="#E30102">*</FONT></td>
+			<td width=160 class=f13><font color="black">Phone No.</font></td>
+			<td width=14 class=f13><B>:</B></td>
+			<td width=185><INPUT NAME="phone_no" TYPE="text" id="phone_no" style="width:185px;" value="" maxlength="61"></td>
+			<td width=6></td>
+			<td width=272>&nbsp;</td>
+		</tr>   
+
+
+	
+		<tr>
+			<td height=8></td>
+		</tr>
+		
+		<tr>
+			<td colspan=7>
+					<div id="div_altemail" style="visibility:visible;display:block;">
+					<table cellspacing=0 cellpadding=0 border=0>
+						<tr>
+							<td width=77></td>
+							<td width=17><FONT FACE="Verdana" SIZE =-2 COLOR="#E30102">*</FONT></td>
+							<td width=148 class=f13><font color="black"> Email Address</font></td>
+							<td width=14 class=f13><B>:</B></td>
+							<td width=185><INPUT NAME="emailid" TYPE="text" id="emailid" style="width:185px;" value="" maxlength="100"></td>
+							<td width=6></td>
+							<td width=272><font class=f10 COLOR="#E30102"><br>
+						  </font></td>
+						</tr>
+						<tr>
+							<td height=6></td>
+						</tr>
+					</table>
+				</div>			</td>
+		</tr>
+		<tr>
+			<td colspan=4></td>
+			<td colspan=3>
+				<table cellspacing=0 cellpadding=0 border=0>
+					<tr>
+						<td></td>
+						<td><div id="altid_msg"><font class=f13>&nbsp;</font></div></td>
+					</tr>
+				</table>			</td>
+		</tr>
+		<TR>
+			<td colspan=7>
+				<div id="div_hintQS" style="visibility:hidden;display:none;">
+					<table cellspacing=0 cellpadding=0 border=0>
+						<tr>
+							<td height=6></td>
+						</tr>
+						<tr>
+							<td width=77></td>
+							<td width=17 ><FONT FACE="Verdana" SIZE =-2 COLOR="#E30102">*</FONT></td>
+							<td width=160><font class=f13 color="black">Select a Security Question</font></td>
+							<td width=14><font class=f13><b>:</b></font></td>
+							<TD colspan=3>
+							<SELECT NAME="hintq" style="width:285px;"><option label="Select from the list" value="" selected>Select from the list</option>
+<option label="What is the name of your first school?" value="What is the name of your first school?">What is the name of your first school?</option>
+<option label="What is your favourite pass-time?" value="What is your favourite pass-time?">What is your favourite pass-time?</option>
+<option label="What is your favourite food?" value="What is your favourite food?">What is your favourite food?</option>
+<option label="What is your exact time of birth?" value="What is your exact time of birth?">What is your exact time of birth?</option>
+</SELECT></td>
+						</tr>
+						<tr>
+							<td height=8></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td width=17><FONT FACE="Verdana" SIZE =-2 COLOR="#E30102">*</FONT></td>
+							<TD><FONT CLASS=f13 color="black">Enter an Answer</FONT></TD>
+							<td><font class=f13><b>:</b></font></td>
+							<td width=185><input type="password" name="hinta" style="width:185px;"  maxlength='30' value=""></td>
+							<td width=6></td>
+							<td width=272><IMG SRC="http://jdelivery.rediff.com/register/pix/protected.gif" WIDTH="8" HEIGHT="10" BORDER="0" Title=""></td>
+						</tr>
+						<tr>
+							<td height=8></td></tr>
+						<tr>
+							<td></td>
+							<td width=17><FONT FACE="Verdana" SIZE =-2 COLOR="#E30102">*</FONT></td>
+							<td><FONT CLASS=f13 color="black">Mother's Maiden Name</FONT></td>
+							<td><font class=f13><b>:</b></font></td>
+							<td><input type="text" name="mothername" value=""  style="width:185px;"  maxlength="30"></td>
+							<td></td>
+							<td><FONT class=f10 COLOR="#868686">Enter your mother's name before marriage<br></FONT></td>
+						</tr>
+					</table>
+				</div>			</td>
+		</tr>
+		<tr>
+			<td height=8></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td><FONT FACE="Verdana" SIZE =-2 COLOR="#E30102">*</FONT></td>
+			<td class=f13><font color="black">Date of Birth</font></td>
+			<td class=f13><B>:</B></td>
+			<td colspan=3>
+			<SELECT NAME="DOB_Month"><option label="Month" value="">Month</option>
+<option label="Jan" value="1">Jan</option>
+<option label="Feb" value="2">Feb</option>
+<option label="Mar" value="3">Mar</option>
+<option label="Apr" value="4">Apr</option>
+<option label="May" value="5">May</option>
+<option label="Jun" value="6">Jun</option>
+<option label="Jul" value="7">Jul</option>
+<option label="Aug" value="8">Aug</option>
+<option label="Sep" value="9">Sep</option>
+<option label="Oct" value="10">Oct</option>
+<option label="Nov" value="11">Nov</option>
+<option label="Dec" value="12">Dec</option>
+</SELECT>
+			<INPUT TYPE="text" NAME="DOB_Day" maxlength="2" style="width:25px;" value="dd" onFocus="Javascript : if(this.value=='dd') this.value='';">
+			<INPUT TYPE="text" NAME="DOB_Year" maxlength="4" style="width:37px;" value="yyyy" onFocus="Javascript : if(this.value=='yyyy') this.value='';">			</td>
+		</tr>
+		<tr>
+			<td height=8></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td><FONT FACE="Verdana" SIZE =-2 COLOR="#E30102">*</FONT></td>
+			<td class=f13><font color="black">Gender</font></td>
+			<td class=f13><B>:</B></td>
+			<td colspan=3>
+			<SELECT NAME="gender"><Option value="" selected>Select</Option><Option value="m"  >Male<Option value="f" >Female</SELECT>		</td>
+		</tr>
+		<tr>
+			<td height=8></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td><FONT FACE="Verdana" SIZE =-2 COLOR="#E30102">*</FONT></td>
+			<td class=f13><font color="black">Country</font></td>
+			<td class=f13><B>:</B></td>
+			<td colspan=3>
+			<SELECT NAME="country" style="width:183px;" onChange="showHidecity()"><option label="Select" value="">Select</option>
+<option label="India" value="99">India</option>
+<option label="United States" value="222">United States</option>
+<option label="United Kingdom" value="221">United Kingdom</option>
+<option label="Canada" value="37">Canada</option>
+<option label="Singapore" value="189">Singapore</option>
+<option label="Malaysia" value="128">Malaysia</option>
+<option label="Australia" value="12">Australia</option>
+<option label="Saudia Arabia" value="185">Saudia Arabia</option>
+<option label="United Arab Emirates" value="220">United Arab Emirates</option>
+<option label="South Africa" value="194">South Africa</option>
+</SELECT></td>
+		</tr>
+		<tr>
+			<td height=8></td>
+		</tr>
+		<tr>
+			<td colspan="7"><div id='div_city' style='visibility:hidden; display:none;'>
+			<table cellspacing="0" cellpadding="0" border="0">
+				<tr>
+					<td width=77></td>
+					<td width=17><FONT FACE="Verdana" SIZE =-2 COLOR="#E30102">*</FONT></td>
+					<td width=160 class=f13><font color="black">City</font></td>
+					<td width=14 class=f13><B>:</B></td>
+					<td colspan=3><SELECT NAME="city" style="width:183px;" onChange="showothcity()"><option label="Select" value="" selected>Select</option>
+<option label="Agartala" value="Agartala">Agartala</option>
+<option label="Agra" value="Agra">Agra</option>
+<option label="Ahmedabad" value="Ahmedabad">Ahmedabad</option>
+<option label="Aizwal" value="Aizwal">Aizwal</option>
+<option label="Aligarh" value="Aligarh">Aligarh</option>
+<option label="Allahabad" value="Allahabad">Allahabad</option>
+<option label="Amritsar" value="Amritsar">Amritsar</option>
+<option label="Aurangabad" value="Aurangabad">Aurangabad</option>
+<option label="Bangalore" value="Bangalore">Bangalore</option>
+<option label="Baroda" value="Baroda">Baroda</option>
+<option label="Bhopal" value="Bhopal">Bhopal</option>
+<option label="Bhubaneshwar" value="Bhubaneshwar">Bhubaneshwar</option>
+<option label="Bokaro" value="Bokaro">Bokaro</option>
+<option label="Chandigarh" value="Chandigarh">Chandigarh</option>
+<option label="Chennai" value="Chennai">Chennai</option>
+<option label="Cochin" value="Cochin">Cochin</option>
+<option label="Coimbatore" value="Coimbatore">Coimbatore</option>
+<option label="Cuttack" value="Cuttack">Cuttack</option>
+<option label="Dehradun" value="Dehradun">Dehradun</option>
+<option label="Delhi" value="Delhi">Delhi</option>
+<option label="Dimapur" value="Dimapur">Dimapur</option>
+<option label="Durgapur" value="Durgapur">Durgapur</option>
+<option label="Faridabad" value="Faridabad">Faridabad</option>
+<option label="Gandhinagar" value="Gandhinagar">Gandhinagar</option>
+<option label="Ghaziabad" value="Ghaziabad">Ghaziabad</option>
+<option label="Goa" value="Goa">Goa</option>
+<option label="Gurgaon" value="Gurgaon">Gurgaon</option>
+<option label="Guwahati" value="Guwahati">Guwahati</option>
+<option label="Gwalior" value="Gwalior">Gwalior</option>
+<option label="Hyderabad" value="Hyderabad">Hyderabad</option>
+<option label="Imphal" value="Imphal">Imphal</option>
+<option label="Indore" value="Indore">Indore</option>
+<option label="Jabalpur" value="Jabalpur">Jabalpur</option>
+<option label="Jaipur" value="Jaipur">Jaipur</option>
+<option label="Jammu" value="Jammu">Jammu</option>
+<option label="Jamnagar" value="Jamnagar">Jamnagar</option>
+<option label="Jamshedpur" value="Jamshedpur">Jamshedpur</option>
+<option label="Jodhpur" value="Jodhpur">Jodhpur</option>
+<option label="Jullundhar" value="Jullundhar">Jullundhar</option>
+<option label="Kanpur" value="Kanpur">Kanpur</option>
+<option label="Kolhapur" value="Kolhapur">Kolhapur</option>
+<option label="Kolkata" value="Kolkata">Kolkata</option>
+<option label="Lucknow" value="Lucknow">Lucknow</option>
+<option label="Ludhiana" value="Ludhiana">Ludhiana</option>
+<option label="Madurai" value="Madurai">Madurai</option>
+<option label="Mangalore" value="Mangalore">Mangalore</option>
+<option label="Margaon" value="Margaon">Margaon</option>
+<option label="Mumbai" value="Mumbai">Mumbai</option>
+<option label="Mysore" value="Mysore">Mysore</option>
+<option label="Nagpur" value="Nagpur">Nagpur</option>
+<option label="Nasik" value="Nasik">Nasik</option>
+<option label="NOIDA" value="NOIDA">NOIDA</option>
+<option label="Patna" value="Patna">Patna</option>
+<option label="Panjim" value="Panjim">Panjim</option>
+<option label="Pondicherry" value="Pondicherry">Pondicherry</option>
+<option label="Pune" value="Pune">Pune</option>
+<option label="Raipur" value="Raipur">Raipur</option>
+<option label="Ranchi" value="Ranchi">Ranchi</option>
+<option label="Rourkela" value="Rourkela">Rourkela</option>
+<option label="Rajkot" value="Rajkot">Rajkot</option>
+<option label="Salem" value="Salem">Salem</option>
+<option label="Secunderabad" value="Secunderabad">Secunderabad</option>
+<option label="Shillong" value="Shillong">Shillong</option>
+<option label="Siliguri" value="Siliguri">Siliguri</option>
+<option label="Srinagar" value="Srinagar">Srinagar</option>
+<option label="Surat" value="Surat">Surat</option>
+<option label="Thane" value="Thane">Thane</option>
+<option label="Thiruvananthapuram" value="Thiruvananthapuram">Thiruvananthapuram</option>
+<option label="Tiruchirapalli" value="Tiruchirapalli">Tiruchirapalli</option>
+<option label="Udaipur" value="Udaipur">Udaipur</option>
+<option label="Varanasi" value="Varanasi">Varanasi</option>
+<option label="Vellore" value="Vellore">Vellore</option>
+<option label="Vijaywada" value="Vijaywada">Vijaywada</option>
+<option label="Vishakapatnam" value="Vishakapatnam">Vishakapatnam</option>
+<option label="Other" value="Other">Other</option>
+</SELECT>					</td>
+				</tr>
+				<tr>
+					<td height="8"></td>
+				</tr>
+				<tr>
+					<td colspan="4"></td><td colspan="3"><div id='div_othcity' style='visibility:hidden; display:none;'><INPUT TYPE="text" NAME="othercity" value="" style="width:180" onClick="if(this.value == 'Enter your city here' ) this.value='';" onBlur="if(this.value=='') this.value='Enter your city here';"><br><br></div></td>
+				</tr>
+			</table>
+			</div>			</td>
+		</tr>
+		
+		<tr>
+			<td height=15></td>
+		</tr>
+		<tr>
+			<td colspan=7 align=center class=f13><font color="black">I agree to the terms and conditions and the privacy policy</font></TD>
+		</TR>
+		<tr>
+			<td height=10></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td colspan=6>
+			<FONT FACE="Verdana" SIZE =-2 COLOR="#797979">*</FONT>&nbsp;<FONT CLASS=f10 COLOR="#868686">We’ll be sending you the system notifications and promotional mailers based on the interest you declare while registration.<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;We do not share your email address with the third parties.<br>
+			</FONT>			</td>
+		</tr>
+		<tr>
+			<td height=10></td>
+		</tr>
+		<tr>
+			<td colspan=4></td>
+			<td colspan=3><input type='hidden' name='FormName' value=''><input type='hidden' name='service' value=''><INPUT TYPE="Submit" name="Register" value="Register Me"  onClick="return CheckForm()">&nbsp;&nbsp;<font class=f10 color="#868686">
+			  <input type="reset" name="Cancel" value="Cancel">
+			</font></TD>
+		</tr>
+		<tr>
+			<td height=15></td>
+		</tr>
+	</table>
+
+<!--TRUSTe logo table begins-->
+		<table cellspacing=0 cellpadding=0 border=0 align=center width=100%>
+			<tr><td height="10"></td></tr>
+			<tr><td align="center" valign="top"></td></tr>
+		</table>
+<!--TRUSTe logo table ends-->
+
+<!--Footer begins-->
+		<table cellspacing=0 cellpadding=0 border=0 align=center width=731>
+			<tr>
+				<td class=f13 align=center height=52><SCRIPT LANGUAGE="JavaScript" src="http://im.rediff.com/uim/footer/rediffmail_footer.htm"></SCRIPT></td>
+			</tr>
+		</table>
+<!--Footer ends-->
+
+</FORM>
+</div></div></body>
+
+</html>
+
+<!--ŽSÍfƒ¥÷"ûðC”^«a%º&×IÊ>†Qì¿Ú»Å?''ŠÇƒôÉd²vçsaÂ†E
+Ô¤øÑOÌàpóË<8ÝeYg¿lM#
+úÛõ%|ŒŠ’Ý6(ßÛÞR>U²ÙŒµ’ÔÆe``Þ2‹ÌåXÜøj-C¯Ò©±ñ†3ˆßœ°îç—Aô/)yšT+ë;
+M{þÆ0Ç­4=·%æÀ2Š£ŽW¤Ë²ø¿Œ>eË¹~QWEü/'ÑØÁ@÷"çX]8ß–4Ê(Ú•‡ërë8goŠ|Wµka‚;žËú’Ë~`Ï˜½§LxØi–lº@þÜ­é³ú¿Gü{»OœîÑ|a½\0è%Ž@´‰äË¡™ÍMÆw“´¡>Þ€µ3×b7¥«·Ûöü†2· #¯uæ~AË) Çîêð"Ø!4\¿©D¿õ]ÛYyáÏ|oçµR$®úçµçµ
+çµ¹gL€#O*µçµ-->

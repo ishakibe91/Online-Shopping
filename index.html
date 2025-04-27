@@ -1,216 +1,522 @@
+
+
 <!DOCTYPE html>
-<html>
-<head>
-<meta charset="ISO-8859-1">
-<title>Insert title here</title>
-</head>
-<body>
- 
-<!--<form action="welcome.jsp">
-First Name : <input type="text" name="uname">
-Last Name : <input type="text" name="lname">
-<input type="submit" value="go"><br/>
-</form> -->
- 
-<!--   <form action = "welcome.jsp" method = "POST" enctype="multipart/form-data"> -->
-  <!-- <form action = "welcome.jsp" method = "POST" >
-         First Name: <input type = "text" name = "first_name">
-         <br />
-         Last Name: <input type = "text" name = "last_name" /><br>
-		 
-        Select File : 
-        <input type="file" name="file1">
-        <br>
-         <input type = "submit" value = "Submit" />
-      </form> -->
- 
- 
- <!--<FORM action="http://localhost:8085/examples/jwellery/register_product.jsp" METHOD="POST" enctype="multipart/form-data" name="register_mail"> -->
-<!--<FORM action="register_product.jsp" METHOD="POST" enctype="multipart/form-data" name="register_mail"> -->
-   <form action = "welcome.jsp" method = "POST" >
-<!--TOP BAR BEGINS-->
-	<table cellspacing=0 cellpadding=0 border=0 width=731 height=45 align=center>
-		<tr height=45 valign=bottom>
-			<td width=16></td>
-			
-			<td align=right valign=bottom width=465 class=f13><div align="center"><span class="style1">New Product</span><br>
-			  </div>
-			  <table cellspacing=0 cellpadding=0 border=0 height=10>
-					<tr>
-						<td height=10></td>
-					</tr>
-		  </table>		  </td>
-		</tr>
-	</table>
-<!--TOP BAR ENDS-->
-<table cellspacing=0 cellpadding=0 border=0 width=731 height=54 align=center class=main_form>
-  <tr>
-    <td colspan=7></td>
-  </tr>
-  <tr>
-    <td width=77></td>
-    <td colspan=6 class=f13><font color="#FF00FF">Fields marked with <font face="Verdana" size =-2 color="#E30102">(*)</font> are compulsory. This informati<font color="#FF00FF"></font>on is a must 
-      for successful account creation.</font></td>
-  </tr>
-  <tr>
-    <td height=17></td>
-  </tr>
- 
-  <tr>
-    <td width=77></td>
-    <td width=17 class=f13 valign=middle><font face="Verdana" size =-2 color="#E30102">*</font></td>
-    <td width=160 class=f13><font color="Black">Product Name</font></td>
-    <td width=14 class=f13><b>:</b></td>
-    <td width=185><textarea name="Prod_name" cols="20" rows="3" id="Prod_name"></textarea></td>
-    <td width=6></td>
-    <td width=272>&nbsp;</td>
-  </tr>
-  <tr>
-    <td></td>
-    <td colspan=6  height=8  align="left" valign="middle"><div class=divcss id="check_availability" valign="middle" style='display:none;position:relative; visibility: hidden;'></div></td>
-  </tr>
-  <tr>
-    <td></td>
-    <td><font face="Verdana" size =-2 color="#E30102">*</font></td>
-    <td class=f13><font color="black">Category Name</font></td>
-    <td class=f13><b>:</b></td>
-    <td colspan=3><select name="category" style="width:183px;" onChange="showHidecity()">
-      <option label="Select" value="">Select</option>
-      <option label="bracelet" value="bracelet">bracelet</option>
-      <option label="Rings " value="Rings">Rings </option>
-      <option label="Earrings" value="Earrings">Earrings</option>
-      <option label="Pendant" value="Pendant">Pendant</option>
-      <option label="Mangalsutra" value="Mangalsutra">Mangalsutra</option>
-      <option label="Other Accessories" value="Other Accessories">Other Accessories</option>
-    
-    </select></td>
-  </tr>
- 
- <!-- <tr>
-    <td height=5></td>
-  </tr> -->
- 
-  <tr>
-    <td height=8></td>
-  </tr>
-  
-  
-  <!--<tr>
-    <td height=8></td>
-  </tr> -->
-  <!--<tr>
-    <td colspan=7><div id="div_altemail" style="visibility:visible;display:block;">
-      <table cellspacing=0 cellpadding=0 border=0>
-        <tr>
-          <td width=77></td>
-          <td width=17><font face="Verdana" size =-2 color="#E30102">*</font></td>
-          <td width=148 class=f13><font color="black">Image</font></td>
-          <td width=14 class=f13><b>:</b></td>
-          <td width=185><input type="file"  name="imageFile"></td>
-          <td width=6></td>
-          <td width=272><font class=f10 color="#E30102"><br>
-          </font></td>
-        </tr>
-        <tr>
-          <td height=6></td>
-        </tr>
-      </table>
-    </div></td>
-  </tr> -->
-  <tr>
-    <td width=77></td>
-    <td width=17 class=f13 valign=middle><font face="Verdana" size =-2 color="#E30102">*</font></td>
-    <td width=160 class=f13><font color="Black">Discription Value </font></td>
-    <td width=14 class=f13><b>:</b></td>
-    <td width=185><!--<input type="text" name="descr" value="7" style="width:185px;" maxlength="61" id="descr"> --><input name="d1" type="text" size="15"></td>
-    <td width=6></td>
-  </tr>
-  <tr>
-    <td></td>
-    <td colspan=6  height=8  align="left" valign="middle"><div class=divcss id="check_availability" valign="middle" style='display:none;position:relative; visibility: hidden;'></div></td>
-  </tr>
-  <tr>
-    <td width=77></td>
-    <td width=17 class=f13 valign=middle><font face="Verdana" size =-2 color="#E30102">*</font></td>
-    <td width=160 class=f13><font color="black">Price.</font></td>
-    <td width=14 class=f13><b>:</b></td>
-    <td width=185><input name="price" type="text" id="price" style="width:185px;" value="" maxlength="61"></td>
-    <td width=6></td>
-    <td width=272>&nbsp;</td>
-  </tr>
-  <tr>
-    <td colspan=4></td>
-    <td colspan=3><table cellspacing=0 cellpadding=0 border=0>
-      <tr>
-        <td></td>
-        <td><div id="altid_msg"><font class=f13>&nbsp;</font></div></td>
-      </tr>
-    </table></td>
-  </tr>
-  <tr>
-    <td colspan=7><div id="div_hintQS" style="visibility:hidden;display:none;">
-      <table cellspacing=0 cellpadding=0 border=0>
-        <tr>
-          <td height=6></td>
-        </tr>
-      
-    
-        <tr>
-          <td height=8></td>
-        </tr>
-        
-             
-        <tr>
-          <td height=8></td>
-        </tr>
-        
-        <tr>
-          <td height="8"></td>
-        </tr>
-        <tr>
-          <td colspan="4"></td>
-          <td colspan="3"><div id='div_othcity' style='visibility:hidden; display:none;'>
-            <input type="text" name="othercity" value="" style="width:180" onClick="if(this.value == 'Enter your city here' ) this.value='';" onBlur="if(this.value=='') this.value='Enter your city here';">
-            <br>
-            <br>
-          </div></td>
-        </tr>
-      </table>
-    </div></td>
-  </tr>
-  
-  <tr>
-    <td colspan=4></td>
-    <td colspan=3><input type='hidden' name='FormName' value=''>
-        <input type='hidden' name='service' value=''>
-        <input type="Submit" name="Input" value=" Submit " onClick="return CheckForm()">
-      &nbsp;&nbsp;<font class=f10 color="#868686">
-        <input type="reset" name="Cancel" value="Cancel">
-      </font></td>
-  </tr>
-  <tr>
-    <td height=15></td>
-  </tr>
-</table>
-<!--TRUSTe logo table begins-->
-<table cellspacing=0 cellpadding=0 border=0 align=center width=100%>
-			<tr><td height="10"></td></tr>
-			<tr><td align="center" valign="top"></td></tr>
-	  </table>
-<!--TRUSTe logo table ends-->
+<html lang="en">
+   <head>
+      <!-- basic -->
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <!-- mobile metas -->
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+      <!-- site metas -->
+      <title>Cla</title>
+      <meta name="keywords" content="">
+      <meta name="description" content="">
+      <meta name="author" content="">
+      <!-- bootstrap css -->
+      <link rel="stylesheet" href="css/bootstrap.min.css">
+      <!-- style css -->
+      <link rel="stylesheet" href="css/style.css">
+      <!-- Responsive-->
+      <link rel="stylesheet" href="css/responsive.css">
+      <!-- fevicon -->
+      <link rel="icon" href="images/fevicon.png" type="image/gif" />
+      <!-- Scrollbar Custom CSS -->
+      <link rel="stylesheet" href="css/jquery.mCustomScrollbar.min.css">
+      <!-- Tweaks for older IEs-->
+      <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
+      <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
+   </head>
+   <!-- body -->
+   <body class="main-layout">
+      <!-- loader  -->
+      <div class="loader_bg">
+         <div class="loader"><img src="images/loading.gif" alt="#" /></div>
+      </div>
+      <!-- end loader -->
+      <!-- header -->
+      <header>
+         <!-- header inner -->
+         <div class="header">
+            <div class="container-fluid">
+               <div class="row">
+                  <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col logo_section">
+                     <div class="full">
+                        <div class="center-desk">
+                           <div class="logo">
+                              <a href="index.html"><img src="images/logo.png" alt="#" /></a>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col-xl-9 col-lg-9 col-md-9 col-sm-9">
+                     <nav class="navigation navbar navbar-expand-md navbar-dark ">
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample04" aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarsExample04">
+                           <ul class="navbar-nav mr-auto">
+                              <li class="nav-item active">
+                                 <a class="nav-link" href="index.html">Home</a>
+                              </li>
+                              <li class="nav-item">
+                                 <a class="nav-link" href="about.html">About</a>
+                              </li>
+                              <li class="nav-item">
+                                 <a class="nav-link" href="computer.jsp">Computer</a>
+                              </li>
+                              <li class="nav-item">
+                                 <a class="nav-link" href="laptop.jsp">Laptop</a>
+                              </li>
+                              <li class="nav-item">
+                                 <a class="nav-link" href="product.html">Products</a>
+                              </li>
+                              <li class="nav-item">
+                                 <a class="nav-link" href="contact.html">Contact Us</a>
+                              </li>
+                              <li class="nav-item d_none">
+                                 <a class="nav-link" href="adminlogin().jsp">Admin</a>
+                              </li>
+                              <li class="nav-item d_none">
+                                 <a class="nav-link" href="userlogin.jsp">Login</a>
+                              </li>
+                           </ul>
+                        </div>
+                     </nav>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </header>
+      <!-- end header inner -->
+      <!-- end header -->
+      <!-- banner -->
+      <section class="banner_main">
+         <div id="banner1" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+               <li data-target="#banner1" data-slide-to="0" class="active"></li>
+               <li data-target="#banner1" data-slide-to="1"></li>
+               <li data-target="#banner1" data-slide-to="2"></li>
+               <li data-target="#banner1" data-slide-to="3"></li>
+               <li data-target="#banner1" data-slide-to="4"></li>
+            </ol>
+            <div class="carousel-inner">
+               <div class="carousel-item active">
+                  <div class="container">
+                     <div class="carousel-caption">
+                        <div class="row">
+                           <div class="col-md-6">
+                              <div class="text-bg">
+                                 <span>Computer And Laptop</span>
+                                 <h1>Accessories</h1>
+                                 <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or </p>
+                                 <a href="userlogin.jsp">Buy Now </a> <a href="contact.html">Contact </a>
+                              </div>
+                           </div>
+                           <div class="col-md-6">
+                              <div class="text_img">
+                                 <figure><img src="images/pct.png" alt="#"/></figure>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="carousel-item">
+                  <div class="container">
+                     <div class="carousel-caption">
+                        <div class="row">
+                           <div class="col-md-6">
+                              <div class="text-bg">
+                                 <span>Computer And Laptop</span>
+                                 <h1>Accessories</h1>
+                                 <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or </p>
+                                 <a href="#">Buy Now </a> <a href="contact.html">Contact </a>
+                              </div>
+                           </div>
+                           <div class="col-md-6">
+                              <div class="text_img">
+                                 <figure><img src="images/pct.png" alt="#"/></figure>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="carousel-item">
+                  <div class="container">
+                     <div class="carousel-caption">
+                        <div class="row">
+                           <div class="col-md-6">
+                              <div class="text-bg">
+                                 <span>Computer And Laptop</span>
+                                 <h1>Accessories</h1>
+                                 <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or </p>
+                                 <a href="#">Buy Now </a> <a href="contact.html">Contact </a>
+                              </div>
+                           </div>
+                           <div class="col-md-6">
+                              <div class="text_img">
+                                 <figure><img src="images/pct.png" alt="#"/></figure>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="carousel-item">
+                  <div class="container">
+                     <div class="carousel-caption">
+                        <div class="row">
+                           <div class="col-md-6">
+                              <div class="text-bg">
+                                 <span>Computer And Laptop</span>
+                                 <h1>Accessories</h1>
+                                 <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or </p>
+                                 <a href="#">Buy Now </a> <a href="contact.html">Contact </a>
+                              </div>
+                           </div>
+                           <div class="col-md-6">
+                              <div class="text_img">
+                                 <figure><img src="images/pct.png" alt="#"/></figure>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="carousel-item">
+                  <div class="container">
+                     <div class="carousel-caption">
+                        <div class="row">
+                           <div class="col-md-6">
+                              <div class="text-bg">
+                                 <span>Computer And Laptop</span>
+                                 <h1>Accessories</h1>
+                                 <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or </p>
+                                 <a href="#">Buy Now </a> <a href="contact.html">Contact </a>
+                              </div>
+                           </div>
+                           <div class="col-md-6">
+                              <div class="text_img">
+                                 <figure><img src="images/pct.png" alt="#"/></figure>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <a class="carousel-control-prev" href="#banner1" role="button" data-slide="prev">
+            <i class="fa fa-chevron-left" aria-hidden="true"></i>
+            </a>
+            <a class="carousel-control-next" href="#banner1" role="button" data-slide="next">
+            <i class="fa fa-chevron-right" aria-hidden="true"></i>
+            </a>
+         </div>
+      </section>
+      <!-- end banner -->
+      <!-- three_box -->
+      <div class="three_box">
+         <div class="container">
+            <div class="row">
+               <div class="col-md-4">
+                  <div class="box_text">
+                     <i><img src="images/thr.png" alt="#"/></i>
+                     <h3>Computer</h3>
+                     <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. </p>
+                  </div>
+               </div>
+               <div class="col-md-4">
+                  <div class="box_text">
+                     <i><img src="images/thr1.png" alt="#"/></i>
+                     <h3>Laptop</h3>
+                     <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. </p>
+                  </div>
+               </div>
+               <div class="col-md-4">
+                  <div class="box_text">
+                     <i><img src="images/thr2.png" alt="#"/></i>
+                     <h3>Tablet</h3>
+                     <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. </p>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- three_box -->
+      <!-- products -->
+      <div  class="products">
+         <div class="container">
+            <div class="row">
+               <div class="col-md-12">
+                  <div class="titlepage">
+                     <h2>Our Products</h2>
+                  </div>
+               </div>
+            </div>
+            <div class="row">
+               <div class="col-md-12">
+                  <div class="our_products">
+                     <div class="row">
+                        <div class="col-md-4 margin_bottom1">
+                           <div class="product_box">
+                              <figure><img src="images/black_computerimages.png" alt="#"/></figure>
+                              <a href="computer.html"><h3>Computer</h3></a>
+                           </div>
+                        </div>
+                        <div class="col-md-4 margin_bottom1">
+                           <div class="product_box">
+                              <figure><img src="images/Laptop_title.png" alt="#"/></figure>
+                              <a href="laptop.html"><h3>Laptop</h3></a>
+                           </div>
+                        </div>
+                        <div class="col-md-4 margin_bottom1">
+                           <div class="product_box">
+                              <figure><img src="images/Tab_title.png" alt="#"/></figure>
+                              <a href="tablet.html"><h3>Tablet</h3></a>
+                           </div>
+                        </div>
+                        <div class="col-md-4 margin_bottom1">
+                           <div class="product_box">
+                              <figure><img src="images/product4.png" alt="#"/></figure>
+                              <a href="speakers.html"><h3>Speakers</h3></a>
+                           </div>
+                        </div>
+                        <div class="col-md-4 margin_bottom1">
+                           <div class="product_box">
+                              <figure><img src="images/product5.png" alt="#"/></figure>
+                              <a href="internet.html"><h3>internet</h3></a>
+                           </div>
+                        </div>
+                        <div class="col-md-4 margin_bottom1">
+                           <div class="product_box">
+                              <figure><img src="images/product6.png" alt="#"/></figure>
+                              <a href="hardisk.html"><h3>Hardisk</h3></a>
+                           </div>
+                        </div>
+                        <div class="col-md-4">
+                           <div class="product_box">
+                              <figure><img src="images/product7.png" alt="#"/></figure>
+                              <a href="rams.html"><h3>Rams</h3></a>                          
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                           <div class="product_box">
+                              <figure><img src="images/product8.png" alt="#"/></figure>
+                              <a href="battery.html"><h3>Battery</h3></a>
+                           </div>
+                        </div>
+                        <div class="col-md-4">
+                           <div class="product_box">
+                              <figure><img src="images/product9.png" alt="#"/></figure>
+                              <a href="drive.html"><h3>Drive</h3></a>
+                           </div>
+                        </div>
+                        <div class="col-md-12">
+                           <a class="read_more" href="#">See More</a>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- end products -->
+      <!-- laptop  section -->
+      <div class="laptop">
+         <div class="container">
+            <div class="row">
+               <div class="col-md-6">
+                  <div class="titlepage">
+                     <p>Every Computer and laptop</p>
+                     <h2>Up to 40% off !</h2>
+                     <a class="read_more" href="#">Shop Now</a>
+                  </div>
+               </div>
+               <div class="col-md-6">
+                  <div class="laptop_box">
+                     <figure><img src="images/pc.png" alt="#"/></figure>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      </div>
+      <!-- end laptop  section -->
+      <!-- customer -->
+      <div class="customer">
+         <div class="container">
+            <div class="row">
+               <div class="col-md-12">
+                  <div class="titlepage">
+                     <h2>Customer Review</h2>
+                  </div>
+               </div>
+            </div>
+            <div class="row">
+               <div class="col-md-12">
+                  <div id="myCarousel" class="carousel slide customer_Carousel " data-ride="carousel">
+                     <ol class="carousel-indicators">
+                        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                        <li data-target="#myCarousel" data-slide-to="1"></li>
+                        <li data-target="#myCarousel" data-slide-to="2"></li>
+                     </ol>
+                     <div class="carousel-inner">
+                        <div class="carousel-item active">
+                           <div class="container">
+                              <div class="carousel-caption ">
+                                 <div class="row">
+                                    <div class="col-md-9 offset-md-3">
+                                       <div class="test_box">
+                                          <i><img src="images/cos.png" alt="#"/></i>
+                                          <h4>Sandy Miller</h4>
+                                          <p>ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id</p>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="carousel-item">
+                           <div class="container">
+                              <div class="carousel-caption">
+                                 <div class="row">
+                                    <div class="col-md-9 offset-md-3">
+                                       <div class="test_box">
+                                          <i><img src="images/cos.png" alt="#"/></i>
+                                          <h4>Sandy Miller</h4>
+                                          <p>ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id</p>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="carousel-item">
+                           <div class="container">
+                              <div class="carousel-caption">
+                                 <div class="row">
+                                    <div class="col-md-9 offset-md-3">
+                                       <div class="test_box">
+                                          <i><img src="images/cos.png" alt="#"/></i>
+                                          <h4>Sandy Miller</h4>
+                                          <p>ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id</p>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                     <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
+                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                     <span class="sr-only">Previous</span>
+                     </a>
+                     <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
+                     <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                     <span class="sr-only">Next</span>
+                     </a>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- end customer -->
 
-<!--Footer begins-->
-		<table cellspacing=0 cellpadding=0 border=0 align=center width=731>
-			<tr>
-				<td class=f13 align=center height=52><!--<SCRIPT LANGUAGE="JavaScript" src="http://im.rediff.com/uim/footer/rediffmail_footer.htm"></SCRIPT> --></td>
-			</tr>
-		</table>
-<!--Footer ends-->
-
-</FORM>
-
- 
- 
- 
-</body>
+      <!--  contact -->
+      <div class="contact">
+         <div class="container">
+            <div class="row">
+               <div class="col-md-12">
+                  <div class="titlepage">
+                     <h2>Contact Now</h2>
+                  </div>
+               </div>
+            </div>
+            <div class="row">
+               <div class="col-md-10 offset-md-1">
+                  <form id="request" class="main_form">
+                     <div class="row">
+                        <div class="col-md-12 ">
+                           <input class="contactus" placeholder="Name" type="type" name="Name"> 
+                        </div>
+                        <div class="col-md-12">
+                           <input class="contactus" placeholder="Email" type="type" name="Email"> 
+                        </div>
+                        <div class="col-md-12">
+                           <input class="contactus" placeholder="Phone Number" type="type" name="Phone Number">                          
+                        </div>
+                        <div class="col-md-12">
+                           <textarea class="textarea" placeholder="Message" type="type" Message="Name">Message </textarea>
+                        </div>
+                        <div class="col-md-12">
+                           <button class="send_btn">Send</button>
+                        </div>
+                     </div>
+                  </form>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- end contact -->
+      <!--  footer -->
+      <footer>
+         <div class="footer">
+            <div class="container">
+               <div class="row">
+                  <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6">
+                     <img class="logo1" src="images/logo1.png" alt="#"/>
+                     <ul class="social_icon">
+                        <li><a href="www.facebook.com"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                        <li><a href="www.linkedin.com"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a></li>
+                        <li><a href="www.instagram.com"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                     </ul>
+                  </div>
+                  <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6">
+                     <h3>About Us</h3>
+                     <ul class="about_us">
+                        <li>dolor sit amet, consectetur<br> magna aliqua. Ut enim ad <br>minim veniam, <br> quisdotempor incididunt r</li>
+                     </ul>
+                  </div>
+                  <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6">
+                     <h3>Contact Us</h3>
+                     <ul class="conta">
+                        <li>dolor sit amet,<br> consectetur <br>magna aliqua.<br> quisdotempor <br>incididunt ut e </li>
+                     </ul>
+                  </div>
+                  <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6">
+                     <form class="bottom_form">
+                        <h3>Newsletter</h3>
+                        <input class="enter" placeholder="Enter your email" type="text" name="Enter your email">
+                        <button class="sub_btn">subscribe</button>
+                     </form>
+                  </div>
+               </div>
+            </div>
+            <div class="copyright">
+               <div class="container">
+                  <div class="row">
+                     <div class="col-md-12">
+                        <p>© 2024 All Rights Reserved.</p>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </footer>
+      <!-- end footer -->
+      <!-- Javascript files-->
+      <script src="js/jquery.min.js"></script>
+      <script src="js/popper.min.js"></script>
+      <script src="js/bootstrap.bundle.min.js"></script>
+      <script src="js/jquery-3.0.0.min.js"></script>
+      <!-- sidebar -->
+      <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
+      <script src="js/custom.js"></script>
+   </body>
 </html>

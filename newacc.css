@@ -1,0 +1,31 @@
+*{
+  margin:0;
+  padding:0;
+}
+
+.first-table{
+padding-bottom:2rem;
+}
+.mid-table{
+margin-left: 1rem;
+margin-right:17rem;
+padding-bottom:2rem;
+}
+
+.last-table{
+padding-top:2rem;
+margin-left:13rem;
+}
+#nav {
+    background-color: #4843A3;
+    color: wheat;
+    padding: 10px;
+}
+li{
+  display: inline;
+  padding-right: 5rem;
+  justify-content: center;
+}
+li a{
+color:white;
+}

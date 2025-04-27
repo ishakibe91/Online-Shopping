@@ -1,0 +1,783 @@
+<html>
+<!--<link rel="stylesheet" href="newacc.css">-->
+<link rel="stylesheet" href="tablet.css">
+<link rel="stylesheet" href="css/bootstrap.min.css">
+      <!-- style css -->
+      <!-- <link rel="stylesheet" href="css/style.css"> -->
+      <!-- Responsive-->
+      <link rel="stylesheet" href="css/responsive.css">
+      <!-- fevicon -->
+      <link rel="icon" href="images/fevicon.png" type="image/gif" />
+      <!-- Scrollbar Custom CSS -->
+      <link rel="stylesheet" href="css/jquery.mCustomScrollbar.min.css">
+      <!-- Tweaks for older IEs -->
+      <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
+
+<SCRIPT>
+
+<!-- This script and many more are available free online at -->
+<!-- The JavaScript Source!! http://javascript.internet.com -->
+
+<!-- Begin
+function validate(field) {
+//var valid = "abcdefghijklmnopqrstuvwxyz0123456789"
+var valid = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ ";
+var ok = "yes";
+var temp;
+for (var i=0; i<field.value.length; i++) {
+temp = "" + field.value.substring(i, i+1);
+if (valid.indexOf(temp) == "-1") ok = "no";
+}
+if (ok == "no") {
+//alert("Invalid entry!  Only characters are accepted!");
+//field.focus();
+//field.select();
+return false;
+   }
+}
+//  End -->
+
+
+function isInteger(s)
+{   var i;
+    for (i = 0; i < s.length; i++)
+    {   
+        // Check that current character is number.
+        var c = s.charAt(i);
+        if (((c < "0") || (c > "9"))) return false;
+    }
+    // All characters are numbers.
+    return true;
+}
+
+function isChar(s)
+{   var i;
+    for (i = 0; i < s.length; i++)
+    {   
+        // Check that current character is number.
+        var c = s.charAt(i);
+        if (((c < "A") || (c > "Z")))return false;
+    }
+	
+    // All characters are numbers.
+    return true;
+}
+
+function trim(s)
+{   var i;
+    var returnString = "";
+    // Search through string's characters one by one.
+    // If character is not a whitespace, append to returnString.
+    for (i = 0; i < s.length; i++)
+    {   
+        // Check that current character isn't whitespace.
+        var c = s.charAt(i);
+        if (c != " ") returnString += c;
+    }
+    return returnString;
+}
+
+
+
+
+function CheckForm () {
+
+	var form=document.form3;
+//	var enrollno=document.form3.ENROLLMENT_N0
+//	var studname=document.form3.STUDENT_NAME
+
+	var firstname=document.form3.HT_First_Name
+	var lastname=document.form3.HT_Last_Name
+	var billcity=document.form3.HT_Bill_City		
+	var shipname=document.form3.HT_Ship_Name
+	var shipcity=document.form3.HT_Ship_City
+
+
+	var billpin=document.form3.HT_Bill_Pin
+	var htphone=document.form3.HT_Phone	
+	var htshippin=document.form3.HT_Ship_Pin			
+	
+	
+	
+	
+
+		if (document.form3.HT_rep_email.value != document.form3.HT_email.value) {
+	                alert ('Your E-Mail addresses do not match. Please re-enter.');
+			return false;
+		}
+
+                if(document.form3.HT_First_Name.value =="") {
+                      alert (' First Name not entered. Please enter.');
+			return false;
+                }
+
+                if(document.form3.HT_Last_Name.value ==""){
+                   alert ('Last Name not entered. Please enter.');
+			return false;
+                }
+
+                if(document.form3.HT_Bill_Address1.value ==""){
+                   alert ('Address1 not entered. Please enter.');
+			return false;
+                }
+
+                if(document.form3.HT_Bill_City.value ==""){
+                   alert ('City not entered. Please enter.');
+			return false;
+                }
+               if(document.form3.HT_Bill_State.value ==""){
+                   alert ('State not entered. Please enter.');
+			return false;
+                }
+
+		if(document.form3.HT_Bill_Pin.value ==""){
+                   alert ('Pin not entered. Please enter.');
+			return false;
+                }
+
+		if(document.form3.radiobutton.value ==""){
+                   alert ('Payment option not entered. Please enter.');
+			return false;
+                }
+
+	if (validate(firstname)==false){
+		alert("Please Enter a Valid Value for First Name")
+		firstname.value=""
+		firstname.focus()
+		return false
+	}	
+
+
+	if (validate(lastname)==false){
+		alert("Please Enter a Valid Value for Last Name")
+		lastname.value=""
+		lastname.focus()
+		return false
+	}	
+
+
+	if (validate(billcity)==false){
+		alert("Please Enter a Valid Value for City")
+		billcity.value=""
+		billcity.focus()
+		return false
+	}	
+
+
+	if (validate(shipname)==false){
+		alert("Please Enter a Valid Value for Shipping Name")
+		shipname.value=""
+		shipname.focus()
+		return false
+	}	
+
+	if (validate(shipcity)==false){
+		alert("Please Enter a Valid Value for Shipping City")
+		shipcity.value=""
+		shipcity.focus()
+		return false
+	}	
+
+
+
+
+
+
+	if (isInteger(billpin.value)==false){
+		alert("Please Enter a Valid Value for Billing Pin")
+		billpin.value=""
+		billpin.focus()
+		return false
+	}	
+
+
+	if (isInteger(htphone.value)==false){
+		alert("Please Enter a Valid Value for Phone No")
+		htphone.value=""
+		htphone.focus()
+		return false
+	}	
+
+	if (isInteger(htshippin.value)==false){
+		alert("Please Enter a Valid Value for Shipping Pin")
+		htshippin.value=""
+		htshippin.focus()
+		return false
+	}	
+
+
+
+/*if (document.form3.HT_rep_email.value  != "@") {
+	                alert ('Please Enter proper value for Email ');
+			return false;
+		}
+
+if (document.form3.HT_email.value  != "@") {
+	                alert ('Please Enter proper value for Email');
+			return false;
+		}*/
+
+
+		
+
+
+             document.form3.submit();
+
+
+}
+</script>
+
+
+<head>
+<title>GIVE ACCOUNT DETAILS</title>
+<link rel="stylesheet" href="bill.css">
+</head>
+<BODY TEXT=#000000 LINK=#0000ff VLINK=#000099>
+<div id="nav">
+        <a href="about.html"><img src="./images/logo.png" alt="company logo"></a>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="computer.html">Computer</a></li>
+        <li><a href="laptop.html">Laptop</a></li>
+        <li><a href="product.html">Products</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+    </div>
+	<br>
+<CENTER> 
+
+  <TABLE WIDTH=600 BORDER=0 CELLPADDING=0 CELLSPACING=0>
+  <TBODY>
+
+<TR>
+
+<TD WIDTH=600 VALIGN=top>
+
+<!-- Begin Content Table -->
+
+<TABLE class="first-table" WIDTH=600 BORDER=0 CELLPADDING=2 CELLSPACING=0><TBODY>
+
+<TR>
+	<TD colspan=4>
+
+
+	<TABLE BORDER=0 CELLPADDING=0 width=600>
+
+		<TR>
+			<TD VALIGN="top" COLSPAN="2" >
+			<TD></TD>
+		<TR>
+			<td COLSPAN="2">
+				<font FACE="Verdana" size=-1>(Note your name and password for future reference)</font>			</td>
+		</TR>
+
+		<!-- ======================================================================================== -->
+         
+    <FORM action=http:\\localhost:8080\examples\Online_Shop\AccountServlet.jsp
+
+              id=form3 method=post name=form3 >
+              <TR>
+                <TD><FONT face="Verdana, Helvetica, Swiss, Arial"
+                  size=2><B>First Name</B></FONT> <input class="input-box" maxlength=15 name=HT_First_Name size=15 rows="1"></TD>
+                <TD >&nbsp;</TD></TR>
+              <TR>
+                <TD><FONT face="Verdana, Helvetica, Swiss, Arial"
+                  size=2><B>Last Name</B></FONT> <input class="input-box" maxlength=25 name=HT_Last_Name
+                  size=25 rows="1"></TD>
+                <TD >&nbsp;</TD></TR></TABLE>
+            <P>
+            <BR>
+            <TABLE border=0>
+              <TBODY>
+              <TR>
+                <TD><FONT face="Verdana, Helvetica, Swiss, Arial"
+                  size=2><B><STRONG>Bill to: </STRONG></B></FONT></TD>
+                <TD><FONT face="Verdana, Helvetica, Swiss, Arial"
+                  size=2><B>(Must match credit card)</B></FONT> </TD></TR>
+              <TR>
+                <TD><FONT face="Verdana, Helvetica, Swiss, Arial"
+                  size=2><B><NOBR>Address 1 </NOBR></B></FONT></TD>
+                <TD><INPUT class="input-box" maxLength=35 name=HT_Bill_Address1 size=35
+                  ROWS="1"> </TD></TR>
+              <TR>
+                <TD><FONT face="Verdana, Helvetica, Swiss, Arial"
+                  size=2><B><NOBR
+                  >Address 2 </NOBR></B></FONT></TD>
+                <TD><INPUT class="input-box" maxLength=35 name=HT_Bill_Address2 size=35
+                  ROWS="1"> </TD></TR>
+              <TR>
+                <TD><FONT face="Verdana, Helvetica, Swiss, Arial"
+                  size=2><B
+                  >City </B></FONT></TD>
+                <TD><INPUT class="input-box" maxLength=30 name=HT_Bill_City size=30 ROWS="1">              </TD></TR>
+              <TR>
+                <TD><FONT face="Verdana, Helvetica, Swiss, Arial"
+                  size=2><B
+                  >State</B></FONT> </TD>
+                <TD>
+				<select name="HT_Bill_State" size="1">
+        <option value="Aasam">Aasam</option>
+        <option value="Delhi">Delhi</option>
+        <option value="Jammu">Jammu</option>
+        <option value="Madhya Pradesh">Madhya Pradesh</option>
+        <option value="Maharashatra">Maharashatra</option>
+        <option value="Bihar">Bihar</option>
+        <option value="Haryana">Haryana</option>
+        <option value="Punjab">Punjab</option>
+        <option value="Rajsthan">Rajsthan</option>
+        <option value="Gujrat">Gujrat</option>
+        <option value="Goa">Goa</option>
+        <option value="Uttar Pradesh">Uttar Pradesh</option>
+        <option value="Karnatak">Karnatak</option>
+        <option value="Kerala">Kerala</option>
+        <option value="Tamilnadu">Tamilnadu</option>
+        <option value="Andhra Pradesh">Andhra Pradesh</option>
+        <option value="Odisa">Odisa</option>
+        <option value="West Bangal">West Bangal</option>
+        <option value="Uttranchal">Uttranchal</option>
+        <option value="Jharkhand">Jharkhand</option>
+        <option value="Himachal Pradesh">Himachal Pradesh</option>
+        <option value="Chhatisgarh">Chhatisgarh</option>
+      </select>              </TD></TR>
+              <TR>
+                <TD><FONT face="Verdana, Helvetica, Swiss, Arial"
+                  size=2><B
+                  >Pin Code</B></FONT> </TD>
+                <TD><INPUT class="input-box" maxLength=16 name=HT_Bill_Pin size=10
+                ROWS="1"></TD></table></TD></TR>
+              <TR>
+                <TD><FONT face="Verdana, Helvetica, Swiss, Arial"
+                  size=2><B
+                  >Phone</B></FONT>
+                <input class="input-box1" maxlength=16 name=HT_Phone size=16
+              rows="1"></TD>
+                <TD>&nbsp;</TD></table></TD></TR>
+              <TR>
+                <TD><FONT face="Verdana, Helvetica, Swiss, Arial"
+                  size=2><B
+                  >Country</B></FONT> <select name=HT_Bill_Country size=1 type="TEXT"
+                  value="USA" maxlength="26">
+                  <option selected>India
+                    <SELECTED>
+                  <option>Argentina
+                  <option>Aruba
+                  <option>Australia
+                  <option>Austria
+                  <option>Bahamas
+                  <option>Bahrain
+                  <option>Barbados
+                  <option>Belgium
+                  <option>Belize
+                  <option>Bermuda
+                  <option>Bolivia
+                  <option>Botswana
+                  <option>Brazil
+                  <option>Brunei
+                                                Darussalam
+                  <option>Bulgaria
+                  <option>Canada
+                  <option>Cayman
+                                                      Islands
+                                                      BWI
+                  <option>Chile
+                  <option>China
+                  <option>Colombia
+                  <option>Corsica
+                  <option>Costa
+                                                                Rica
+                  <option>Croatia
+                  <option>Cyprus
+                  <option>Czech
+                                                                      Republic
+                  <option>Denmark
+                  <option>Dominica
+                  <option>Dominican
+                                                                            Republic
+                  <option>Ecuador
+                  <option>Egypt
+                  <option>El
+                                                                                  Salvador
+                  <option>Estonia
+                  <option>Fiji
+                  <option>Finland
+                  <option>France
+                  <option>French
+                  <option>Gabon
+                  <option>Germany
+                  <option>Gibraltar
+                  <option>Greece
+                  <option>Grenada
+                  <option>Guatemala
+                  <option>Haiti
+                  <option>Honduras
+                  <option>Hong
+                                                                                                              Kong
+                  <option>Hungary
+                  <option>Iceland
+                  <option>Indonesia
+                  <option>Internet
+                  <option>Ireland
+                  <option>Israel
+                  <option>Italy
+                  <option>Jamaica
+                  <option>Japan
+                  <option>Jordan
+                  <option>Kenya
+                  <option>Kosovo
+                  <option>Kuwait
+                  <option>Latvia
+                  <option>Liechtenstein
+                  <option>Lithuania
+                  <option>Luxembourg
+                  <option>Macedonia
+                  <option>Malaysia
+                  <option>Malta
+                  <option>Mauritius
+                  <option>Mexico
+                  <option>Morocco
+                  <option>Mozambique
+                  <option>Namibia
+                  <option>Nepal
+                  <option>Nether.
+                                                                                                                                                                    Antil.
+                  <option>Netherlands
+                  <option>New
+                                                                                                                                                                        Zealand
+                  <option>Nicaragua
+                  <option>Norway
+                  <option>Oman
+                  <option>Pakistan
+                  <option>Panama
+                  <option>Papua
+                                                                                                                                                                                    New
+                                                                                                                                                                                    Guinea
+                  <option>Paraguay
+                  <option>Peru
+                  <option>Philippines
+                  <option>Poland
+                  <option>Portugal
+                  <option>Qatar
+                  <option>Romania
+                  <option>Russia
+                  <option>Saudi
+                                                                                                                                                                                                      Arabia
+                  <option>Serbia
+                  <option>Seychelles
+                  <option>Singapore
+                  <option>Slovakia
+                  <option>Slovenia
+                  <option>Solomon
+                                                                                                                                                                                                                  Islands
+                  <option>South Africa
+                  <option>South
+                                                                                                                                                                                                                      Korea
+                  <option>Spain
+                  <option>Sri Lanka
+                  <option>St
+                                                                                                                                                                                                                            Vincent/Grenadine
+                  <option>St. Christopher
+                  <option>St.
+                                                                                                                                                                                                                                Lucia
+                  <option>St.
+                                                                                                                                                                                                                                  Vincent
+                  <option>Sweden
+                  <option>Switzerland
+                  <option>Syria
+                  <option>Taiwan
+                  <option>Thailand
+                  <option>Trinidad
+                                                                                                                                                                                                                                              and Tobago
+                  <option>Turkey
+                  <option>United Arab
+                                                                                                                                                                                                                                                  Emirate
+                  <option>United
+                                                                                                                                                                                                                                                    Kingdom
+                  <option>Uruguay
+                  <option>USA
+                  <option>Vatican
+                                                                                                                                                                                                                                                          City
+                  <option>Venezuela
+                  <option>Vietnam
+                  <option>Zimbabwe</option>
+                </select></TD>
+                <TD>&nbsp;</TD>
+              </TR></TBODY></TABLE>
+
+                <br>
+            <P>
+            <HR>
+            <BR>
+            <!--<CENTER>-->
+              <TABLE class="mid-table" border=0>
+              <TBODY>
+              <TR>
+                <TD><FONT face="Verdana, Helvetica, Swiss, Arial"
+                  size=3><B><STRONG>Ship to: </STRONG></B></FONT></TD>
+                <TD><FONT face="Verdana, Helvetica, Swiss, Arial"
+                  size=2><B>(only if different than billing)</B></FONT> </TD></TR>
+              <TR>
+                <TD><FONT face="Verdana, Helvetica, Swiss, Arial"
+                  size=2 style="COLOR:black"><B>Name</B></FONT> </TD>
+                <TD><INPUT class="input-box" maxLength=35 name=HT_Ship_Name size=35 ROWS="1">
+              </TD></TR>
+              <TR>
+                <TD><FONT face="Verdana, Helvetica, Swiss, Arial"
+                  size=2><B
+                  >Address 1</B></FONT> </TD>
+                <TD><INPUT class="input-box" maxLength=35 name=HT_Ship_Address1 size=35
+                  ROWS="1"> </TD></TR>
+              <TR>
+                <TD><FONT face="Verdana, Helvetica, Swiss, Arial"
+                  size=2><B
+                  >Address 2</B></FONT> </TD>
+                <TD><INPUT class="input-box" maxLength=35 name=HT_Ship_Address2 size=35
+                  ROWS="1"> </TD></TR>
+              <TR>
+                <TD><FONT face="Verdana, Helvetica, Swiss, Arial"
+                  size=2><B>City</B></FONT> </TD>
+                <TD><INPUT class="input-box" maxLength=30 name=HT_Ship_City size=30 ROWS="1">
+              </TD></TR>
+              <TR>
+                <TD><FONT face="Verdana, Helvetica, Swiss, Arial"
+                  size=2><B>State</B></FONT> </TD>
+                <TD>
+<select name="HT_Ship_State" size="1">
+        <option value="Aasam">Aasam</option>
+        <option value="Delhi">Delhi</option>
+        <option value="Jammu">Jammu</option>
+        <option value="Madhya Pradesh">Madhya Pradesh</option>
+        <option value="Maharashatra">Maharashatra</option>
+        <option value="Bihar">Bihar</option>
+        <option value="Haryana">Haryana</option>
+        <option value="Punjab">Punjab</option>
+        <option value="Rajsthan">Rajsthan</option>
+        <option value="Gujrat">Gujrat</option>
+        <option value="Goa">Goa</option>
+        <option value="Uttar Pradesh">Uttar Pradesh</option>
+        <option value="Karnatak">Karnatak</option>
+        <option value="Kerala">Kerala</option>
+        <option value="Tamilnadu">Tamilnadu</option>
+        <option value="Andhra Pradesh">Andhra Pradesh</option>
+        <option value="Odisa">Odisa</option>
+        <option value="West Bangal">West Bangal</option>
+        <option value="Uttranchal">Uttranchal</option>
+        <option value="Jharkhand">Jharkhand</option>
+        <option value="Himachal Pradesh">Himachal Pradesh</option>
+        <option value="Chhatisgarh">Chhatisgarh</option>
+      </select>
+    </TD>
+  </TR>
+              <TR>
+                <TD><FONT face="Verdana, Helvetica, Swiss, Arial"
+                  size=2><B
+                  >Pin Code</B></FONT> </TD>
+                <TD><INPUT class="input-box" maxLength=16 name=HT_Ship_Pin size=10
+                  ROWS="1"> </TD></TR>
+              <TR>
+                <TD><FONT face="Verdana, Helvetica, Swiss, Arial"
+                  size=2><B>Country</B></FONT> </TD>
+                <TD><SELECT class="input-box1" name=HT_Ship_Country size=1 TYPE="TEXT"
+                  VALUE="INDIA" MAXLENGTH="26"> <OPTION selected>India
+                    <SELECTED><OPTION>Antigua and
+                    Barbuda<OPTION>Argentina<OPTION>Aruba<OPTION>Australia<OPTION>Austria<OPTION>Bahamas<OPTION>Bahrain<OPTION>Barbados<OPTION>Belgium<OPTION>Belize<OPTION>Bermuda<OPTION>Bolivia<OPTION>Botswana<OPTION>Brazil<OPTION>Brunei
+                    Darussalam<OPTION>Bulgaria<OPTION>Canada<OPTION>Cayman
+                    Islands
+                    BWI<OPTION>Chile<OPTION>China<OPTION>Colombia<OPTION>Corsica<OPTION>Costa
+                    Rica<OPTION>Croatia<OPTION>Cyprus<OPTION>Czech
+                    Republic<OPTION>Denmark<OPTION>Dominica<OPTION>Dominican
+                    Republic<OPTION>Ecuador<OPTION>Egypt<OPTION>El
+                    Salvador<OPTION>Estonia<OPTION>Fiji<OPTION>Finland<OPTION>France<OPTION>French
+                    Polynesia<OPTION>Gabon<OPTION>Germany<OPTION>Gibraltar<OPTION>Greece<OPTION>Grenada<OPTION>Guatemala<OPTION>Haiti<OPTION>Honduras<OPTION>Hong
+                    Kong<OPTION>Hungary<OPTION>Iceland<OPTION>Indonesia<OPTION>Internet<OPTION>Ireland<OPTION>Israel<OPTION>Italy<OPTION>Jamaica<OPTION>Japan<OPTION>Jordan<OPTION>Kenya<OPTION>Kosovo<OPTION>Kuwait<OPTION>Latvia<OPTION>Liechtenstein<OPTION>Lithuania<OPTION>Luxembourg<OPTION>Macedonia<OPTION>Malaysia<OPTION>Malta<OPTION>Mauritius<OPTION>Mexico<OPTION>Morocco<OPTION>Mozambique<OPTION>Namibia<OPTION>Nepal<OPTION>Nether.
+                    Antil.<OPTION>Netherlands<OPTION>New
+                    Zealand<OPTION>Nicaragua<OPTION>Norway<OPTION>Oman<OPTION>Pakistan<OPTION>Panama<OPTION>Papua
+                    New
+                    Guinea<OPTION>Paraguay<OPTION>Peru<OPTION>Philippines<OPTION>Poland<OPTION>Portugal<OPTION>Qatar<OPTION>Romania<OPTION>Russia<OPTION>Saudi
+                    Arabia<OPTION>Serbia<OPTION>Seychelles<OPTION>Singapore<OPTION>Slovakia<OPTION>Slovenia<OPTION>Solomon
+                    Islands<OPTION>South Africa<OPTION>South
+                    Korea<OPTION>Spain<OPTION>Sri Lanka<OPTION>St
+                    Vincent/Grenadine<OPTION>St. Christopher<OPTION>St.
+                    Lucia<OPTION>St.
+                    Vincent<OPTION>Sweden<OPTION>Switzerland<OPTION>Syria<OPTION>Taiwan<OPTION>Thailand<OPTION>Trinidad
+                    and Tobago<OPTION>Turkey<OPTION>United Arab
+                    Emirate<OPTION>United
+                    Kingdom<OPTION>Uruguay<OPTION>USA<OPTION>Vatican
+                    City<OPTION>Venezuela<OPTION>Vietnam<OPTION>Zimbabwe</OPTION></SELECT>
+                </TD></TR></TBODY></TABLE>
+<!--</CENTER>--> 
+            <P>
+            <HR>
+            <table class="last-table" border=0>
+              <tbody>
+                <tr>
+                  <td><font face="Verdana, Helvetica, Swiss, Arial"
+                  size=2><b><b
+                  >Payment </b></b></font></td>
+                  <td><label>
+                    <input class="input-box" name="radiobutton" type="radio" value="radiobutton">
+                    <b>Credit Card</b></label>
+                    &nbsp;&nbsp;&nbsp;&nbsp;
+                    <label>
+                    <input class="input-box" name="radiobutton" type="radio" value="radiobutton">
+                      <b>Debit Card</b></label>
+                    &nbsp;&nbsp;&nbsp;&nbsp;
+                    <label>
+                    <input class="input-box" name="radiobutton" type="radio" value="radiobutton">
+                      <b>Net Banking</b></label></td>
+                </tr>
+                <tr>
+                  <td><font face="Verdana, Helvetica, Swiss, Arial"
+                  size=2><b><b
+                  >Credit Card </b></b></font></td>
+                </tr>
+                <tr>
+                  <td><font face="Verdana, Helvetica, Swiss, Arial"
+                  size=2><b><b
+                    >Credit Card Number </b></b></font></td>
+                  <td><input class="input-box" maxlength=50 name=credit_card_no size=40 rows="1">
+                  </td>
+                </tr>
+                <tr>
+                  <td><font face="Verdana, Helvetica, Swiss, Arial"
+                  size=2><b><b
+                  >Password </b></b></font></td>
+                  <td><input class="input-box" name=pass3 type="password" size=40 maxlength=50 rows="1">
+                  </td>
+                </tr>
+                <tr>
+                  <td><font face="Verdana, Helvetica, Swiss, Arial"
+                  size=2><b><b
+                  > </b></b></font></td>
+                  <td><font face="Verdana, Helvetica, Swiss, Arial"
+                  size=2><b><b
+                  >
+                    <label>
+                    <input class="pay-btn" name="Pay" type="button" id="Pay" value="Pay">
+                    </label>
+                    <input class="pay-btn" name="Cancel" type="reset" id="Cancel" value="Reset">
+                  </b></b></font></td>
+                </tr>
+                <tr>
+                  <td><font face="Verdana, Helvetica, Swiss, Arial"
+                  size=2><b><b
+                  >Debit Card </b></b></font></td>
+                </tr>
+                <tr>
+                  <td><font face="Verdana, Helvetica, Swiss, Arial"
+                  size=2><b><b
+                  >Debit Card Number </b></b></font></td>
+                  <td><input class="input-box" maxlength=50 name=credit_card_no size=40 rows="1">
+                  </td>
+                </tr>
+                <tr>
+                  <td><font face="Verdana, Helvetica, Swiss, Arial"
+                  size=2><b><b
+                  >Password </b></b></font></td>
+                  <td><input class="input-box" name=pass3 type="password" size=40 maxlength=50 rows="1">
+                  </td>
+                </tr>
+                <tr>
+                  <td><font face="Verdana, Helvetica, Swiss, Arial"
+                  size=2><b><b
+                  > </b></b></font></td>
+                  <td><font face="Verdana, Helvetica, Swiss, Arial"
+                  size=2><b><b
+                  >
+                    <label>
+                    <input class="pay-btn" name="Pay" type="button" id="Pay" value="Pay">
+                    </label>
+                    <input class="pay-btn" name="Cancel" type="reset" id="Cancel" value="Reset">
+                  </b></b></font></td>
+                </tr>
+                <tr>
+                  <td><font face="Verdana, Helvetica, Swiss, Arial"
+                  size=2><b><b
+                  >Net Banking </b></b></font></td>
+                </tr>
+                <tr>
+                  <td><font face="Verdana, Helvetica, Swiss, Arial"
+                  size=2><b><b
+                  >Bank Name </b></b></font></td>
+                  <td><input class="input-box" maxlength=50 name=bank_name size=40 rows="1">
+                  </td>
+                </tr>
+                <tr>
+                  <td><font face="Verdana, Helvetica, Swiss, Arial"
+                  size=2><b><b
+                  style="COLOR: black">User Name </b></b></font></td>
+                  <td><input class="input-box" maxlength=50 name=user_name size=40 rows="1">
+                  </td>
+                </tr>
+                <tr>
+                  <td><font face="Verdana, Helvetica, Swiss, Arial"
+                  size=2><b><b
+                  >Password </b></b></font></td>
+                  <td><input class="input-box" name=pass3 type="password" size=40 maxlength=50 rows="1">
+                  </td>
+                </tr>
+                <tr>
+                  <td><font face="Verdana, Helvetica, Swiss, Arial"
+                  size=2><b><b
+                  > </b></b></font></td>
+                  <td><font face="Verdana, Helvetica, Swiss, Arial"
+                  size=2><b><b
+                  >
+                    <label>
+                    <input class="pay-btn" name="Pay" type="button" id="Pay" value="Pay">
+                    </label>
+                    <input class="pay-btn" name="Cancel" type="reset" id="Cancel" value="Reset">
+                  </b></b></font></td>
+                </tr>
+                <tr>
+                  <td><font face="Verdana, Helvetica, Swiss, Arial"
+                  size=2><b><b
+                  >Email </b></b></font></td>
+                  <td><input class="input-box" maxlength=50 name=HT_email size=40 rows="1">
+                  </td>
+                </tr>
+                <tr>
+                  <td><font face="Verdana, Helvetica, Swiss, Arial"
+                  size=2><b><b
+                  >Verify Email </b></b></font></td>
+                  <td><input class="input-box" maxlength=50 name=HT_rep_email size=40 rows="1">
+                  </td>
+                </tr>
+                <tr>
+                  <td></td>
+				  <br>
+                  <td ><small><font face=Verdana>We use your email address to
+                    notify you when your order ships, or for any problems with
+                    your order.<br>
+                    Leave the box blank if you do not have an email
+                    address.</font></small> </td>
+					<br>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td><input name=HT_Cart size=8 type=hidden value=97819360
+                  rows="1">
+                  </td>
+                </tr>
+                <tr>
+				<Center>
+                  <td align=middle colspan=2><input class="bill-btn" name=Create_Account onClick="return CheckForm()" type=submit value="Bill Now">
+                      <input class="bill-btn" name=Reset type=reset value="Reset Info">
+					  
+                  </td>
+				  </Center>
+                </tr>
+              </tbody>
+            </table>
+            <BR>
+			<CENTER>
+			  </TBODY>
+			  <!-- End Content Table -->
+			  </TBODY>
+              </form>
+            </CENTER>
+</body>
+</html>
+<!--(����*^��������$E��c�
+gKc��r��`�"uN#&�����>�g����0v�=$�}����}����F�9[Ɇ����/�V��&)�mʬI�c�[^-l��]A�������/P��>��fz�L[ӕ-�g�f�EU��ا�3�t���`��*��u�U:7�s�U��B�#�<G"��a�T���}W7��RY��{�C�M�t5~�e?r��	YBP�@p�\�|sw�K/G�0��u{�D�O��Ly�ŨZZP�>E��oϤ���%*&=dn���,3CÄ��v���BŪ0����m���,^=��dh~���ȗqL`�eR
+>���1[=��D�׿�'���R$����
+絹gL�#Oㅵ�-->
